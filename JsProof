@@ -1,0 +1,53 @@
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+const numberOfNFT=[];
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT (name,eyecolor,shirtDesign,shirtColor,shirtBrand,gender) {
+    const NFT_obj1={
+        "name": name,
+        "eyecolor": eyecolor,
+        "shirtDesign": shirtDesign,
+        "shirtColor": shirtColor,
+        "shirtBrand": shirtBrand,
+        "gender": gender
+    }
+    numberOfNFT.push(NFT_obj1);
+
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+    for(let i=0;i<numberOfNFT.length;i++){
+        console.log("Name: " + numberOfNFT[i].name);
+        console.log("Eyecolor: " + numberOfNFT[i].eyecolor);
+        console.log("ShirtDesign: " + numberOfNFT[i].shirtDesign);
+        console.log("shirtColor: " + numberOfNFT[i].shirtColor);
+        console.log("ShirtBrand: " + numberOfNFT[i].shirtBrand);
+        console.log("Gender: " + numberOfNFT[i].gender);
+
+    }
+}
+
+//total number of NFTs we have minted to the console
+function getTotalSupply() {
+    console.log("\nTotal number of NFTs created: " + numberOfNFT.length)
+}
+
+// calling functions
+mintNFT("Raj","Brown","Floral","White","Jack&Jones","Male"+"\n");
+mintNFT("Vivek","Blue","Checked","Red","Arrow","Male"+"\n");
+mintNFT("Riya","Brown","Floral","Turquoise","Pantaloons","Female"+"\n");
+listNFTs();
+getTotalSupply();
